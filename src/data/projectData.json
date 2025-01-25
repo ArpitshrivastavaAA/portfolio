@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "src1": "https://i.ibb.co/6gNJLd2/image.png",
+    "src2": "https://i.ibb.co/Rz6stzN/image.png",
+    "name": "MERN E-Commerce Website",
+    "link": "https://ep-froneend.vercel.app/",
+    "repo": "https://github.com/PoojaSingh31github/MERN-ecommerce-project",
+    "info": "Backend deployed via Render, using Express with MongoDB. Utilizes various packages for authentication, payment processing (Braintree), controllers for user, category, and product actions",
+    "info2": "Frontend deployed via Vercel, utilizes React with various packages for testing, UI components (Ant Design), routing (React Router), and state management (Context API).",
+    "team": "This is the project that was individually done by me and completed in 10 Days.",
+    "tstack": "MERN | BOOTSTRAP | ANIMATE.CSS",
+    "direction": false
+  },
+  {
+    "id": 3,
+    "src1": "https://i.ibb.co/8bHvMDQ/image.png",
+    "src2": "https://i.ibb.co/C9sj9sC/image.png",
+    "name": "E-R diagram builder",
+    "link": "https://entity-craft.vercel.app/",
+    "repo": "https://github.com/PoojaSingh31github/WEB_039_Browser_Breakers",
+    "info": "Backend deployed via Render, using Node.js and Express.js. Implements various routes for managing user authentication, diagram creation, updates, and export functionalities. Includes MongoDB for data storage and integrates a version control system for diagram revisions.",
+    "info2": "Frontend deployed via Vercel, utilizing Vite, Context API, and Tailwind CSS for an intuitive and responsive user interface. Features include drag-and-drop diagram creation, entity and relationship editing, and exporting diagrams to various formats like PNG, PDF, and SVG.",
+    "team": "This is the project that was done by 4 team members and completed in 5 Days.",
+    "tstack": "REACT | XYFLOW | TAILWIND.CSS | MONGODB | EXPRESS | NODE.JS",
+    "direction": true
+  },
+  {
+    "id": 2,
+    "src1": "https://i.ibb.co/fnzKRt3/image.png",
+    "src2": "https://i.ibb.co/nz5WmNQ/image.png",
+    "name": "Algorithm visualizer",
+    "link": "https://al-orbiters-005-ouv85dcbg-poojasingh31githubs-projects.vercel.app/",
+    "repo": "https://github.com/PoojaSingh31github/Al_Orbiters_005",
+    "info": "Developed an interactive platform for visualizing sorting and searching algorithms to aid user understanding. Responsible for UI design and ensuring responsiveness across devices",
+    "info2": "Implemented functionalities for complex algorithms like backtracking and binary search. Collaborated with a team of five, managing medium-level contributions in feature development.",
+    "team": "A collaborative project of 5 team members completed in 5 days.",
+    "tstack": "FIREBASE | TAILWIND.CSS | JAVASCRIPT | HTML | CSS ",
+    "direction": false
+  },
+  
+  {
+    "id": 4,
+    "src1": "https://i.ibb.co/qBHtnJ0/image.png",
+    "src2": "https://i.ibb.co/N7vDR0c/image.png",
+    "name": "Finance Manager",
+    "link": "https://finance-app-orcin-ten.vercel.app/",
+    "repo": "https://github.com/abhishekjoshi1998/Finance-App",
+    "info": "Backend and Authentication: The backend is powered by Firebase, utilizing its Realtime Database for efficient storage and retrieval of financial data. Firebase Authentication is implemented to ensure secure user login and account management.",
+    "info2": "Frontend and Data Visualization: The frontend is developed in React, with Tailwind CSS for an elegant and responsive UI. Financial data is beautifully visualized using Chart.js, providing users with interactive graphs and insights into their income, expenses, and savings trends.",
+    "team": "This is the project that was individually done by me and completed in 1 Days.",
+    "tstack": "REACT | TAILWIND.CSS | CHART.JS | FIREBASE",
+    "direction": true
+  },
+  {
+    "id": 5,
+    "src1": "https://i.imgur.com/WQZujZe.png",
+    "src2": "https://i.imgur.com/1ElIJq2.png",
+    "name": "Finder",
+    "link": "https://quorachat.vercel.app/",
+    "repo": "https://github.com/Rohit9894/quorachat",
+    "info": "It is social media and multiuser site where you can post the articles ",
+    "info2": "It is social media and multiuser site where you can post the articles ",
+    "team": "This is the project that was individually done by me and completed in 2 Days.",
+    "tstack": "HTML | CSS | JAVASCRIPT | NEXT JS | CHAKRA UI",
+    "direction": false
+  }
+]
