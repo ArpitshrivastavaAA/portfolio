@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function Profile() {
   const handleDownload = () => {
     return window.open(
-      "https://drive.google.com/file/d/1eQn-vjUMg4BePqqPMaqRHPcbCTi2ltM3/view?usp=sharing"
+      "https://resume-builder-test-new.masaischool.com/resume/?resumeId=679bcd14f97830ef5e8bf7d2&profileId=self&templateName=TwoColumnMinimal&fontSize=medium"
     );
   };
 
@@ -69,7 +69,7 @@ function Profile() {
               as={Link}
               _hover={{ textDecoration: "none" }}
               download={true}
-              href={"https://drive.google.com/file/d/1eQn-vjUMg4BePqqPMaqRHPcbCTi2ltM3/view?usp=sharing"}
+              href={"https://resume-builder-test-new.masaischool.com/resume/?resumeId=679bcd14f97830ef5e8bf7d2&profileId=self&templateName=TwoColumnMinimal&fontSize=medium"}
               onClick={handleDownload}
               target="_blank"
             >

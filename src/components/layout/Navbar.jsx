@@ -22,7 +22,7 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
 
   const handleDownload = () => {
     return window.open(
-      "https://drive.google.com/file/d/1eQn-vjUMg4BePqqPMaqRHPcbCTi2ltM3/view?usp=sharing"
+      "https://resume-builder-test-new.masaischool.com/resume/?resumeId=679bcd14f97830ef5e8bf7d2&profileId=self&templateName=TwoColumnMinimal&fontSize=medium"
     );
   };
 
