@@ -5,10 +5,22 @@ import { motion } from "framer-motion";
 
 function Profile() {
   const handleDownload = () => {
-    return window.open(
-      "https://resume-builder-test-new.masaischool.com/resume/?resumeId=679bcd14f97830ef5e8bf7d2&profileId=self&templateName=TwoColumnMinimal&fontSize=medium"
+    // Open resume in a new tab
+    window.open(
+      "https://drive.google.com/file/d/1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo/view?usp=sharing",
+      "_blank"
     );
+  
+    // Trigger download
+    const downloadLink = document.createElement("a");
+    downloadLink.href =
+      "https://drive.google.com/uc?export=download&id=1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo";
+    downloadLink.download = "Resume.pdf"; // File name for download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
   };
+  
 
   // Framer Motion Variants
   const fadeIn = {
@@ -66,24 +78,25 @@ function Profile() {
               <b>Frontend Developer</b>
             </Text>
             <Text
-              as={Link}
-              _hover={{ textDecoration: "none" }}
-              download={true}
-              href={"https://resume-builder-test-new.masaischool.com/resume/?resumeId=679bcd14f97830ef5e8bf7d2&profileId=self&templateName=TwoColumnMinimal&fontSize=medium"}
-              onClick={handleDownload}
-              target="_blank"
-            >
-              <Button
-                size={{ base: "sm", md: "md", lg: "lg" }}
-                mt={{ base: "10px", md: "0" }}
-                colorScheme="purple"
-              >
-                Resume{" "}
-                <b style={{ marginLeft: "5px" }}>
-                  <HiDownload />
-                </b>{" "}
-              </Button>{" "}
-            </Text>
+  as={Link}
+  _hover={{ textDecoration: "none" }}
+  href="#"
+  onClick={(e) => {
+    e.preventDefault(); // Prevent default link behavior
+    handleDownload();
+  }}
+>
+  <Button
+    size={{ base: "sm", md: "md", lg: "lg" }}
+    mt={{ base: "10px", md: "0" }}
+    colorScheme="purple"
+  >
+    Resume{" "}
+    <b style={{ marginLeft: "5px" }}>
+      <HiDownload />
+    </b>
+  </Button>
+</Text>
           </Box>
 
           <Box>
