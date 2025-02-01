@@ -2,25 +2,14 @@ import { Box, Button, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-
 function Profile() {
   const handleDownload = () => {
-    // Open resume in a new tab
-    window.open(
-      "https://drive.google.com/file/d/1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo/view?usp=sharing",
-      "_blank"
-    );
-  
-    // Trigger download
-    const downloadLink = document.createElement("a");
-    downloadLink.href =
-      "https://drive.google.com/uc?export=download&id=1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo";
-    downloadLink.download = "Resume.pdf"; // File name for download
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+    const driveFileId = "1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo";
+    const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
+
+    // Open in a new tab
+    window.open(directDownloadLink, "_blank");
   };
-  
 
   // Framer Motion Variants
   const fadeIn = {
@@ -30,12 +19,11 @@ function Profile() {
 
   return (
     <>
+      {/* Spacer Box for Layout Adjustment */}
       <Box height={{ base: "50px", md: "80px" }}></Box>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-      >
+
+      {/* Animated Container */}
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         <Flex
           w={{ base: "100%", md: "80%" }}
           m="auto"
@@ -45,6 +33,7 @@ function Profile() {
           rowGap={{ base: "10px", md: "10px" }}
           mt={{ base: "20px", md: "10px", lg: "40px" }}
         >
+          {/* Text & Info Section */}
           <Box
             fontSize={{ base: "18px", md: "35px", lg: "55px" }}
             width={{ base: "90%", md: "100%", lg: "45%" }}
@@ -53,52 +42,50 @@ function Profile() {
             textAlign={{ base: "center", lg: "left" }}
             lineHeight={{ base: "28px", md: "50px", lg: "80px" }}
           >
-            <Flex
-              justifyContent="center"
-              gap="5px"
-              direction={{ base: "row", lg: "column" }}
-            >
-              <Flex>
-                <Text color="#RGBA(0, 0, 0, 0.64)">
-                  <b>Hello</b>
-                </Text>
-                {/* <Image
-                  mt="-5px"
-                  w={{ base: "40px", md: "60px", lg: "85px" }}
-                  src="https://cliply.co/wp-content/uploads/2021/02/392102850_EARTH_EMOJI_400px.gif"
-                /> */}
-              </Flex>
-
-              <Text color="#RGBA(0, 0, 0, 0.64)">
-                {" "}
-                <b>I,Am</b> <b style={{ color: "#805AD5" }}>Arpit Shrivastava</b>
-              </Text>
-            </Flex>
-            <Text color="#RGBA(0, 0, 0, 0.64)   ">
-              <b>Frontend Developer</b>
-            </Text>
+            {/* "Hello, I am" as a Separate Text */}
             <Text
-  as={Link}
-  _hover={{ textDecoration: "none" }}
-  href="#"
-  onClick={(e) => {
-    e.preventDefault(); // Prevent default link behavior
-    handleDownload();
-  }}
->
-  <Button
-    size={{ base: "sm", md: "md", lg: "lg" }}
-    mt={{ base: "10px", md: "0" }}
-    colorScheme="purple"
-  >
-    Resume{" "}
-    <b style={{ marginLeft: "5px" }}>
-      <HiDownload />
-    </b>
-  </Button>
-</Text>
+              color="#805AD5"
+              fontSize={{ base: "22px", md: "40px", lg: "50px" }}
+            >
+              <b>Hello, I am</b>
+            </Text>
+
+            {/* Name Section */}
+            <Text
+              color="#805AD5"
+              fontSize={{ base: "22px", md: "40px", lg: "50px" }}
+              fontWeight="bold"
+            >
+              Arpit Shrivastava
+            </Text>
+
+            {/* "I am a Frontend Developer" Below the Name */}
+            <Text
+              fontSize={{ base: "18px", md: "28px", lg: "38px" }}
+              color="purple.600"
+              fontWeight="bold"
+              mt="5px"
+            >
+              I am a Frontend Developer
+            </Text>
+
+            {/* Resume Download Button */}
+            <Text
+              as={Link}
+              _hover={{ textDecoration: "none" }}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default link behavior
+                handleDownload();
+              }}
+            >
+              <Button size={{ base: "sm", md: "md", lg: "lg" }} mt="10px" colorScheme="purple">
+                Resume <b style={{ marginLeft: "5px" }}><HiDownload /></b>
+              </Button>
+            </Text>
           </Box>
 
+          {/* Profile Image Section */}
           <Box>
             <Image
               src="https://i.ibb.co/QXrJ53m/profile-pic-8.png"
