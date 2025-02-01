@@ -1,14 +1,32 @@
 import { Box, Button, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 function Profile() {
+  // State to handle showing the "Open in New Tab" button after the first action
+  const [downloaded, setDownloaded] = useState(false);
+
   const handleDownload = () => {
     const driveFileId = "1_hieSg-Ub1AKohAK7Jkr2jwGDYJIpy3A"; // Updated Drive file ID
     const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
 
-    // Open in a new tab
-    window.open(directDownloadLink, "_blank");
+    // Trigger the file download using a temporary <a> tag (for background download)
+    const downloadLink = document.createElement("a");
+    downloadLink.href = directDownloadLink;
+    downloadLink.download = "resume.pdf"; // Optional: name the file
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    // After download, show the "Open in New Tab" button
+    setDownloaded(true);
+  };
+
+  const handleOpenInNewTab = () => {
+    const driveFileId = "1_hieSg-Ub1AKohAK7Jkr2jwGDYJIpy3A";
+    const directViewLink = `https://drive.google.com/file/d/${driveFileId}/view`; // Link to view in a new tab
+    window.open(directViewLink, "_blank");
   };
 
   // Framer Motion Variants
@@ -76,13 +94,30 @@ function Profile() {
               href="#"
               onClick={(e) => {
                 e.preventDefault(); // Prevent default link behavior
-                handleDownload();
+                handleDownload(); // Trigger the download
               }}
             >
               <Button size={{ base: "sm", md: "md", lg: "lg" }} mt="10px" colorScheme="purple">
                 Resume <b style={{ marginLeft: "5px" }}><HiDownload /></b>
               </Button>
             </Text>
+
+            {/* Open in New Tab Button (only visible after downloading) */}
+            {downloaded && (
+              <Text
+                as={Link}
+                _hover={{ textDecoration: "none" }}
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleOpenInNewTab(); // Open the file in new tab
+                }}
+              >
+                <Button size={{ base: "sm", md: "md", lg: "lg" }} mt="10px" colorScheme="purple">
+                  Open Resume in New Tab
+                </Button>
+              </Text>
+            )}
           </Box>
 
           {/* Profile Image Section */}
