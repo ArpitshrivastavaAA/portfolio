@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 function Profile() {
   const handleDownload = () => {
-    const driveFileId = "1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo";
+    const driveFileId = "1_hieSg-Ub1AKohAK7Jkr2jwGDYJIpy3A"; // Updated Drive file ID
     const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
 
     // Open in a new tab
