@@ -84,7 +84,7 @@ function Profile() {
               fontWeight="bold"
               mt="5px"
             >
-              I am a Frontend Developer
+              I am a Fullstack Developer
             </Text>
 
             {/* Resume Download Button */}

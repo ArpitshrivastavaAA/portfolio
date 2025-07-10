@@ -53,7 +53,7 @@ export default function SocialProfileSimple() {
             width={{ base: "90%" }}
             m="auto"
           >
-            I’m a passionate Frontend Developer skilled in building engaging and
+            I’m a passionate Fullstack Developer skilled in building engaging and
             scalable user interfaces. Adaptable, open to feedback, and always
             eager to grow. A self-motivated learner with strong communication
             and teamwork skills, driven by a problem-solving mindset.
