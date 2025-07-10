@@ -74,7 +74,7 @@ export default function SocialProfileSimple() {
               // bg={useColorModeValue("gray.50", "gray.800")}
               fontWeight={"400"}
             >
-              #Frontend
+              #Full stack
             </Badge>
             <Badge
               px={2}
