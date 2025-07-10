@@ -6,24 +6,30 @@ import {
   useDisclosure,
   Stack,
   Text,
-  Link,
   Heading,
 } from "@chakra-ui/react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { motion } from "framer-motion";
-
 
 import { useTheme } from "../../Context/AppContext";
 
 function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { Theme, ToggleTheme } = useTheme();
+  const { Theme } = useTheme();
 
-  const handleDownload = () => {
-    return window.open(
-      "https://drive.google.com/file/d/1HbRVeuJshKqeaJ1W1Ku50-OeFwEjODzo/view?usp=sharing"
-    );
+  const handleDownloadAndOpen = () => {
+    const driveFileId = "1Qu7HKiJ9Qadpf7_BvsgVxGCePV_9Aako";
+    const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
+    const viewLink = `https://drive.google.com/file/d/${driveFileId}/view`;
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = directDownloadLink;
+    downloadLink.download = "resume.pdf";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    window.open(viewLink, "_blank");
   };
 
   const light = {
@@ -61,25 +67,14 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
             color="#RGBA(0, 0, 0, 0.64)"
           >
             <Box p="5px">
-              {Theme === "light" ? (
-                <Heading
-                  fontFamily="'Italianno', cursive"
-                  fontWeight="bold"
-                  fontSize="38px"
-                  color="black"
-                >
-                  AS
-                </Heading>
-              ) : (
-                <Heading
-                  fontFamily="'Italianno', cursive"
-                  fontWeight="bold"
-                  fontSize="38px"
-                  color="white"
-                >
-                  AS
-                </Heading>
-              )}
+              <Heading
+                fontFamily="'Italianno', cursive"
+                fontWeight="bold"
+                fontSize="38px"
+                color={Theme === "light" ? "black" : "white"}
+              >
+                AS
+              </Heading>
             </Box>
             <Flex
               as={"nav"}
@@ -92,44 +87,14 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
               color="#805AD5"
               fontWeight="650"
             >
-              <Text onClick={ProfileRef} cursor="pointer">
-                Home
-              </Text>
-              <Text onClick={AboutRef} cursor="pointer">
-                About Me
-              </Text>
-              <Text onClick={SkillsRef} cursor="pointer">
-                Skills
-              </Text>
-              <Text onClick={ProjectsRef} cursor="pointer">
-                Project
-              </Text>
-              <Text onClick={ContactRef} cursor="pointer">
-                Contact
-              </Text>
-              {/* <Text
-                as={Link}
-                _hover={{ textDecoration: "none" }}
-                download={true}
-                href={"https://drive.google.com/file/d/1eQn-vjUMg4BePqqPMaqRHPcbCTi2ltM3/view?usp=sharing"}
-                onClick={handleDownload}
-                target="_blank"
-              >
-                Resume
-              </Text> */}
+              <Text onClick={ProfileRef} cursor="pointer">Home</Text>
+              <Text onClick={AboutRef} cursor="pointer">About Me</Text>
+              <Text onClick={SkillsRef} cursor="pointer">Skills</Text>
+              <Text onClick={ProjectsRef} cursor="pointer">Project</Text>
+              <Text onClick={ContactRef} cursor="pointer">Contact</Text>
+              <Text onClick={handleDownloadAndOpen} cursor="pointer">Resume</Text>
             </Flex>
           </Flex>
-          {/* <Box width="5%" justifyContent={"center"} display="flex">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Text onClick={ToggleTheme} cursor="pointer">
-                {Theme === "light" ? <BsFillMoonFill /> : <BsFillSunFill />}
-              </Text>
-            </motion.div>
-          </Box> */}
         </Flex>
         {isOpen ? (
           <Box
@@ -138,31 +103,12 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
             style={Theme === "light" ? light : dark}
           >
             <Stack as={"nav"} spacing={4} color="#805AD5" fontWeight="600">
-              <Text onClick={ProfileRef} cursor="pointer">
-                Home
-              </Text>
-              <Text onClick={AboutRef} cursor="pointer">
-                About Me
-              </Text>
-              <Text onClick={SkillsRef} cursor="pointer">
-                Skills
-              </Text>
-              <Text onClick={ProjectsRef} cursor="pointer">
-                Project
-              </Text>
-              <Text onClick={ContactRef} cursor="pointer">
-                Contact
-              </Text>
-              {/* <Text
-                as={Link}
-                _hover={{ textDecoration: "none" }}
-                download={true}
-                href="/Abrar-Khan-Resume.pdf"
-                onClick={handleDownload}
-                target="_blank"
-              >
-                Resume
-              </Text> */}
+              <Text onClick={ProfileRef} cursor="pointer">Home</Text>
+              <Text onClick={AboutRef} cursor="pointer">About Me</Text>
+              <Text onClick={SkillsRef} cursor="pointer">Skills</Text>
+              <Text onClick={ProjectsRef} cursor="pointer">Project</Text>
+              <Text onClick={ContactRef} cursor="pointer">Contact</Text>
+              <Text onClick={handleDownloadAndOpen} cursor="pointer">Resume</Text>
             </Stack>
           </Box>
         ) : null}
@@ -172,6 +118,3 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
 }
 
 export default Navbar;
-
-
-
