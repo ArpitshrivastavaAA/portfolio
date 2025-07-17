@@ -18,13 +18,13 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
   const { Theme } = useTheme();
 
   const handleDownloadAndOpen = () => {
-    const driveFileId = "1Qu7HKiJ9Qadpf7_BvsgVxGCePV_9Aako";
+    const driveFileId = "1FWGlfALavanvKBRKIHwJUpdexp7MkcQR";
     const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
     const viewLink = `https://drive.google.com/file/d/${driveFileId}/view`;
 
     const downloadLink = document.createElement("a");
     downloadLink.href = directDownloadLink;
-    downloadLink.download = "resume.pdf";
+    downloadLink.download = "Arpit_Shrivastava_Resume.pdf";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);

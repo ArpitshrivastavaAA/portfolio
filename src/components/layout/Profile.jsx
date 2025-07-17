@@ -1,31 +1,7 @@
-import { Box, Button, Flex, Image, Text, Link } from "@chakra-ui/react";
-import { HiDownload } from "react-icons/hi";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 function Profile() {
-  const [downloaded, setDownloaded] = useState(false);
-
-  const handleDownload = () => {
-    const driveFileId = "1Qu7HKiJ9Qadpf7_BvsgVxGCePV_9Aako";
-    const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
-
-    const downloadLink = document.createElement("a");
-    downloadLink.href = directDownloadLink;
-    downloadLink.download = "resume.pdf";
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-
-    setDownloaded(true);
-  };
-
-  const handleOpenInNewTab = () => {
-    const driveFileId = "1Qu7HKiJ9Qadpf7_BvsgVxGCePV_9Aako";
-    const directViewLink = `https://drive.google.com/file/d/${driveFileId}/view`;
-    window.open(directViewLink, "_blank");
-  };
-
   const fadeIn = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -73,34 +49,6 @@ function Profile() {
             >
               I am a Fullstack Developer
             </Text>
-            <Text
-              as={Link}
-              _hover={{ textDecoration: "none" }}
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handleDownload();
-              }}
-            >
-              <Button size={{ base: "sm", md: "md", lg: "lg" }} mt="10px" colorScheme="purple">
-                Resume <b style={{ marginLeft: "5px" }}><HiDownload /></b>
-              </Button>
-            </Text>
-            {downloaded && (
-              <Text
-                as={Link}
-                _hover={{ textDecoration: "none" }}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOpenInNewTab();
-                }}
-              >
-                <Button size={{ base: "sm", md: "md", lg: "lg" }} mt="10px" colorScheme="purple">
-                  Open Resume in New Tab
-                </Button>
-              </Text>
-            )}
           </Box>
 
           <Box>
