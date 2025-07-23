@@ -18,7 +18,7 @@ function Navbar({ ProfileRef, AboutRef, SkillsRef, ProjectsRef, ContactRef }) {
   const { Theme } = useTheme();
 
   const handleDownloadAndOpen = () => {
-    const driveFileId = "1FWGlfALavanvKBRKIHwJUpdexp7MkcQR";
+    const driveFileId = "1laWmARRcB_ndPANLcfz_eQHupS_MBSfL";
     const directDownloadLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`;
     const viewLink = `https://drive.google.com/file/d/${driveFileId}/view`;
 
